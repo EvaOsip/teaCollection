@@ -1,0 +1,116 @@
+<section class="order text-black">
+  <div class="container">
+    <h2 class="order-title fw-bold text-center pb-5 pt-4 m-0" id="order-title">Сделать заказ</h2>
+    <form [formGroup]="orderInputs" *ngIf="form" class="order-form row col-xl-6  col-sm-9 mx-auto gy-3 mb-5"
+          id="order-form"
+          (ngSubmit)="createOrder()">
+      <div class="col-xl-6 col-lg-6">
+        <label class="form-label">
+          Имя
+        </label>
+        <input type="text" formControlName="firstNameIndex" class="form-control" id="name-input">
+        <div *ngIf="firstNameIndex?.invalid && (firstNameIndex?.dirty || firstNameIndex?.touched)">
+          <div class="text-danger" *ngIf="firstNameIndex?.errors?.['required']">
+            Имя не заполнено
+          </div>
+          <div class="text-danger" *ngIf="firstNameIndex?.errors?.['pattern']">
+            Имя должно содержать только русские буквы
+          </div>
+        </div>
+      </div>
+      <div class=" col-xl-6 col-lg-6">
+        <label class="form-label">
+          Фамилия
+        </label>
+        <input type="text" formControlName="lastNameIndex" class="form-control" id="lastname-input">
+        <div *ngIf="lastNameIndex?.invalid && (lastNameIndex?.dirty || lastNameIndex?.touched)">
+          <div class="text-danger" *ngIf="lastNameIndex?.errors?.['required']">
+            Фамилия не заполнена
+          </div>
+          <div class="text-danger" *ngIf="lastNameIndex?.errors?.['pattern']">
+            Фамилия должна содержать только русские буквы
+          </div>
+        </div>
+      </div>
+      <div class=" col-xl-6 col-lg-6">
+        <label class="form-label">
+          Телефон
+        </label>
+        <input type="text" formControlName="phoneIndex" class="form-control" id="phone-input">
+        <div *ngIf="phoneIndex?.invalid && (phoneIndex?.dirty || phoneIndex?.touched)">
+          <div class="text-danger" *ngIf="phoneIndex?.errors?.['required']">
+            Телефон не заполнен
+          </div>
+          <div class="text-danger" *ngIf="phoneIndex?.errors?.['pattern']">
+            Телефон должен содержать только цифры и знак "+"
+          </div>
+        </div>
+
+      </div>
+      <div class=" col-lg-6 col-sm-12">
+        <label class="form-label">
+          Страна
+        </label>
+        <input type="text" formControlName="countryIndex" class="form-control" id="country-input">
+        <div *ngIf="countryIndex?.invalid && (countryIndex?.dirty || countryIndex?.touched)">
+          <div class="text-danger" *ngIf="countryIndex?.errors?.['required']">
+            Поле страна не заполнено
+          </div>
+          </div>
+
+      </div>
+      <div class=" col-lg-4 col-sm-12">
+        <label class="form-label">
+          Индекс
+        </label>
+        <input type="text" formControlName="zipIndex" class="form-control" id="index-input">
+        <div *ngIf="zipIndex?.invalid && (zipIndex?.dirty || zipIndex?.touched)">
+          <div class="text-danger" *ngIf="zipIndex?.errors?.['required']">
+            Индекс не заполнен
+          </div>
+          <div class="text-danger" *ngIf="zipIndex?.errors?.['pattern']">
+            Индекс должен содержать 6 цифр
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-sm-12" >
+        <label class="form-label">
+          Адрес
+        </label>
+        <input type="text" formControlName="addressIndex" class="form-control" id="address-input">
+        <div *ngIf="addressIndex?.invalid && (addressIndex?.dirty || addressIndex?.touched)">
+          <div class="text-danger" *ngIf="addressIndex?.errors?.['required']">
+            Адрес не заполнен
+          </div>
+          <div class="text-danger" *ngIf="addressIndex?.errors?.['pattern']">
+            Адрес должен содержать только русские буквы, цифры, слеш, пробелы и тире
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-12 col-lg-12">
+        <label class="form-label">
+          Товар
+        </label>
+        <input type="text" formControlName="productIndex" class="form-control" readonly>
+      </div>
+      <div class="col-xl-12 col-lg-12">
+        <label class="form-label">
+          Комментарий к заказу
+        </label>
+        <input type="text" formControlName="commentIndex" class="form-control">
+      </div>
+      <div class="col-4 " >
+      </div>
+      <div class="col-4 " >
+        <button [disabled]="orderInputs.invalid || orderInputs.disabled" class="btn btn-primary mt-5 px-5 mb-1" id="create-order">Отправить</button>
+        <div class="text-danger" *ngIf="responseSuccess">
+          Произошла ошибка. Попробуйте еще раз
+        </div>
+      </div>
+
+      <div class="col-4 " >
+
+      </div>
+    </form>
+  </div>
+</section>

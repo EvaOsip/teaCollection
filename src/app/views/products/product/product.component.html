@@ -1,0 +1,23 @@
+<section>
+<div  class="container text-center">
+  <h2 class="products-title fw-bolder pb-5 pt-5 text-black">{{product.title}}</h2>
+
+  <div class="product-container d-flex ">
+    <div class="product-tea">
+      <div class=" product-image">
+        <img src="{{product.image}}" class="card-img-top mb-1" alt="Чай">
+      </div>
+      <div>
+        Цена: {{product.price}} / 100 гр.
+      </div>
+      <a [routerLink]="'/order'" class="btn btn-primary px-5 mt-3">Купить</a>
+    </div>
+    <p class="product-description py-2 px-5 ">{{product.description}}</p>
+
+
+  </div>
+</div>
+
+
+
+</section>

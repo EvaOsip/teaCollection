@@ -1,0 +1,12 @@
+<section class="products text-black">
+  <div class="container text-center">
+    <h2 class="products-title fw-bolder mb-5 text-black" id="products">Наши чайные коллекции</h2>
+    <h5 class="mb-3 text-black" id="search-title"></h5>
+    <div class="product-items row d-flex justify-content-center align-items-center gap-2 mb-4">
+      <app-product-card *ngFor="let product of products; let i=index" [product]="product" class="product-item d-flex justify-content-center align-items-center" style="width: 320px"></app-product-card>
+    </div>
+    <div *ngIf="loading" class="loader-bg">
+      <div class="loader"></div>
+    </div>
+  </div>
+</section>

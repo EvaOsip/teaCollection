@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+
+}
+
+section {
+  min-height: calc(100vh - 119px) !important;
+}
+
+.accordion-button:not(.collapsed)::after,
+.accordion-button::after {
+  background-image: url(assets/images/vectordown.png);
+  background-position: center;
+}
+
+.popup {
+  background-color: rgba(0, 0, 0, 0.56);
+  z-index: 2;
+  position: relative;
+}
+
+.popup-content {
+  padding: 20px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 200px;
+  border-radius: 10px;
+  z-index: 3;
+  position: relative;
+}
+
+.popup-content p {
+  font-size: 24px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.popup-close {
+  display: flex;
+  align-self: flex-end;
+  width: 18px;
+  height: 18px;
+  fill: rgb(178, 174, 174);
+}
+
+.product-container {
+  padding: 0 40px;
+}
+
+.product-image {
+
+}
+
+.product-description {
+  font-size: 16px;
+  text-align: left;
+}
+
+.product-card-img {
+  width: 250px;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.49);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+.popup-close {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}

@@ -1,0 +1,93 @@
+<div class="main bg-white py-5 py-md-0 text-black">
+  <div class="container-sm p-0 my-4 ">
+    <ngb-carousel [showNavigationArrows]="showNavigationArrows">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="../../../assets/images/slideone.png" class="w-100" alt="Зеленый чай">
+          <div class="main-info position-absolute top-0 pt-lg-5 mt-md-5 ps-4 d-none d-sm-block">
+            <h1 class="main-title pb-lg-5 pt-xl-5 ps-md-5 ms-md-5 mb-0 mt-5 ms-5 fw-bold lh-1">Скидки на травяные чаи</h1>
+            <p class="main-text mb-md-5 ps-5 ms-md-5 fs-md-5 mt-4 ">Узнай все подробности, заполнив заявку</p>
+            <div class="main-button button mb-lg-5 ps-md-5 ms-5 pt-sm-4">
+              <button type="button" class="hvr-pulse-grow btn btn-primary px-5 py-2" id="main-button-to-order">Заполнить</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="../../../assets/images/Rectangle%206.png" class="w-100" alt="Светлый прямоугольник">
+          <div class="main-info position-absolute top-0 pt-xl-5 mt-lg-5 ps-4 z-1 d-none d-sm-block">
+            <h1 class="main-title2 mt-5 pt-md-5 ps-lg-5 ms-5 mb-0 fw-bold">Закажи три пачки чая</h1>
+            <p class="main-title2 ps-lg-5 ms-5 fw-bold fs-1 mb-md-5">и получи подарок</p>
+            <div class="main-button button mb-5 ps-lg-5 ms-5 pt-lg-4 pb-lg-5">
+              <button type="button" class="main-button-to-products hvr-pulse-grow btn btn-primary px-5 py-2 lh-5 border-0">Заказать</button>
+            </div>
+          </div>
+          <div class="z-0 position-absolute end-0 top-0 mt-4 pt-sm-5 me-lg-5 pe-sm-5  d-flex justify-content-end w-50">
+            <img src="../../../assets/images/slidetwo.png" alt="Заварник с цветочным чаем" class="w-75">
+          </div>
+
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="../../../assets/images/slidethree.png" class="w-100" alt="Ягодный чай">
+          <div class="main-info position-absolute top-0 pt-xl-5 mt-lg-5 ps-4 d-none d-sm-block" >
+            <h1 class="main-title2 mt-md-5 pt-5 ps-lg-5 ms-5 mb-0 fw-bold ">Попробуй нашу новинку — </h1>
+            <p class="main-title2 fs-1 fw-bold ps-lg-5 ms-5 pb-lg-5">ягодный чай</p>
+            <div class="main-button button mb-5 ps-lg-5 ms-5 pt-lg-4 pb-5">
+              <button type="button" class="main-button-to-products hvr-pulse-grow btn btn-primary px-5 py-2 lh-5 border-0">Заказать</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+
+  </div>
+</div>
+<div class="faq text-black">
+  <div class="container-lg ">
+    <h2 class="faq-title fw-bold text-center py-5 text-black">Ответы на часто задаваемые вопросы</h2>
+    <div ngbAccordion class="w-75 mx-auto mb-5">
+      <div ngbAccordionItem [collapsed]="i !== 0" *ngFor="let item of items; let i = index" class="border-0">
+        <h2 ngbAccordionHeader>
+          <button ngbAccordionButton
+                  class="bg-primary bg-gradient fw-medium text-white border border-0 rounded-3 p-4 mb-3"> {{item.question}}</button>
+        </h2>
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody class="border-0 px-4 text-black">
+            <ng-template class="border-0 px-4 text-black">
+              {{item.answer}}
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading" class="popup d-block w-100 h-100 position-fixed top-0 left-0" id="popup">
+  <div class="popup-body d-flex align-items-center justify-content-center min-vh-100">
+    <div class="popup-content">
+      <button class="popup-close" (click)="closePopup()">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g>
+                    <g>
+                        <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+			c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+			c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+			L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+			c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+			c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+			c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"/>
+                    </g>
+                </g>
+                </svg>
+      </button>
+      <p>Посмотрите наши чайные коллекции</p>
+      <a [routerLink]="'/products'" class="button button-popup btn btn-primary px-5 py-2 mb-3" id="button-popup">Смотреть</a>
+    </div>
+
+  </div>
+</div>

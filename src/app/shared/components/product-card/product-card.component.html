@@ -1,0 +1,8 @@
+<div class="card d-flex justify-content-center align-items-center" >
+  <img src="{{product.image}}" class="product-card-img card-img-top mb-1" alt="Чай">
+  <div class="card-body text-center">
+    <h5 class="card-title mb-2 fw-bolder">{{product.title}}</h5>
+    <a [routerLink]="['/products', product.id]" class=" btn btn-primary px-5 mb-1">Подробнее</a>
+  </div>
+</div>
+
